@@ -9,12 +9,14 @@ module NLreg
     import StatsBase: residuals, response, rss, stderror, vcov
 
     export
+        NLmixedModel,
         NLregModel,
         coef,
         coefnames,
         coeftable,
         confint,
         deviance,
+        dispersion,
         dof,
         dof_residual,
         fit!,
@@ -23,14 +25,19 @@ module NLreg
         loglikelihood,
         mss,
         nobs,
+        objective,
         params,
+        pnls!,
         residuals,
         response,
         rss,
         stderror,
+        updateL!,
+        updateμ!,
         vcov
 
     include("utilities.jl")
     include("nonlinreg.jl")
+    include("nonlinmixed.jl")
 
 end # module
